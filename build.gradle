@@ -1,0 +1,25 @@
+buildscript {
+    repositories {
+        ivy { url rupRepoReleaseUrl }    
+        maven { url rupRepoBaseUrl }
+
+//        ivy { url file(System.getProperty('user.home') + '/.ivylocal') }
+    }
+    dependencies {
+        classpath("com.copyright.rup.scm:gradle-plugins:${rupGradlePluginsVersion}")
+    }
+}
+
+apply plugin: 'rup'
+
+subprojects {
+    group='com.copyright.rup.workflow'
+
+    dependencies {
+        compile 'com.copyright.rup.common:common-util:1.0.+'
+		compile 'org.mybatis:mybatis:3.1.0'
+		compile 'org.activiti:activiti-engine:5.8'
+		compile 'org.activiti:activiti-spring:5.8'
+		compile 'cglib:cglib-nodep:2.2.2'
+    }
+}

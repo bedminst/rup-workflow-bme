@@ -1,0 +1,22 @@
+dependencies {
+	//compile project(path: ':construct-persistence', configuration: 'noDeps')
+	//compile project(path: ':workflow-project-api', configuration: 'noDeps')
+
+
+	compile 'commons-beanutils:commons-beanutils:1.8.3'
+    compile 'com.google.guava:guava:11.0.2'
+	
+	runtime 'org.mybatis:mybatis:3.0.6'
+	runtime 'org.mybatis:mybatis-spring:1.0.2'
+	runtime 'org.springframework:spring-tx:3.1.1.RELEASE'
+
+	runtime 'commons-dbcp:commons-dbcp:1.4'
+	runtime 'postgresql:postgresql:9.1-901.jdbc4'
+}
+
+eclipse {
+	project {
+		buildCommand 'org.springframework.ide.eclipse.core.springbuilder'
+		natures 'org.springframework.ide.eclipse.core.springnature'
+	}
+}
